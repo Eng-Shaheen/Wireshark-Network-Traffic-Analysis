@@ -2,8 +2,7 @@
 
 ## Project Objective
 This project demonstrates enterprise-level network traffic analysis using Wireshark.  
-The goal is to identify TCP issues, congestion, retransmissions, zero windows, and connection resets in real-world traffic.  
-All analysis follows **SOC/NOC methodology**, highlighting how a security analyst investigates network anomalies.
+The goal is to identify TCP issues, congestion, retransmissions, zero windows, and connection resets in real-world traffic, highlighting how a security analyst investigates network anomalies.
 
 ## PCAP Sources
 - Original PCAPs were analyzed on a local Kali VM
