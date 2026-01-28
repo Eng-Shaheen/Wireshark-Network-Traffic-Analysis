@@ -1,0 +1,38 @@
+# TCP Analysis Notes — Project #3
+
+## Lab 3-TCP Retrans.pcapng
+- Opened in Wireshark on Kali
+- Total Packets: 202
+- File Size: 202 KB
+- Observation: High-volume capture suitable for SOC-level analysis
+- Protocols:
+  - TCP: 202
+  - UDP: 202
+  - HTTP: 2
+  - Media Type: 1
+- Top Endpoints: A ↔ B (202 packets)
+- Filters Applied:
+  - `tcp.analysis.retransmission` → 3 retransmissions detected
+  - `tcp.analysis.duplicate_ack` → duplicate ACKs observed
+  - `tcp.analysis.zero_window` → zero window detected
+  - `tcp.flags.reset == 1` → connection resets observed
+- Notes: Minor retransmissions, flow control events, connection stability issues
+
+## Lab 6-TCPResets.pcapng
+- Filter Applied: `tcp.flags.reset == 1`
+- Observation: Abrupt connection terminations observed; server/client reset behavior
+
+## CLI Validation (Lab 3)
+Command
+"tshark -r Lab3-TCP\ Retrans.pcapng -q -z io,stat,1"
+Observation: Traffic spikes per second identified; confirms retransmission bursts
+
+## General Notes
+- Analysis performed on local Kali VM
+- All screenshots demonstrate SOC workflow:
+  - Capture Properties
+  - Protocol Hierarchy
+  - TCP Conversations
+  - TCP Filters applied
+  - tshark CLI stats
+- This demonstrates methodology, not raw PCAP access
